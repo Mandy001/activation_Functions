@@ -18,16 +18,31 @@ Formally, the ReLU is defined as:
 The Leaky ReLU has the following form:
 
 <a href="http://www.codecogs.com/eqnedit.php?latex=lrelu(x)=\begin{cases}&space;\alpha&space;x&space;&&space;\text{&space;if&space;}&space;x\leq&space;0&space;\\&space;x&space;&&space;\text{&space;if&space;}&space;x>&space;0&space;\end{cases}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?lrelu(x)=\begin{cases}&space;\alpha&space;x&space;&&space;\text{&space;if&space;}&space;x\leq&space;0&space;\\&space;x&space;&&space;\text{&space;if&space;}&space;x>&space;0&space;\end{cases}" title="lrelu(x)=\begin{cases} \alpha x & \text{ if } x\leq 0 \\ x & \text{ if } x> 0 \end{cases}" /></a>
+
 which has the gradient:
 
 <a href="http://www.codecogs.com/eqnedit.php?latex=\frac{\mathrm{d}&space;}{\mathrm{d}&space;x}lrelu(x)=\begin{cases}&space;\alpha&space;&&space;\text{&space;if&space;}&space;x\leq&space;0&space;\\&space;1&space;&&space;\text{&space;if&space;}&space;x>&space;0&space;\end{cases}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\frac{\mathrm{d}&space;}{\mathrm{d}&space;x}lrelu(x)=\begin{cases}&space;\alpha&space;&&space;\text{&space;if&space;}&space;x\leq&space;0&space;\\&space;1&space;&&space;\text{&space;if&space;}&space;x>&space;0&space;\end{cases}" title="\frac{\mathrm{d} }{\mathrm{d} x}lrelu(x)=\begin{cases} \alpha & \text{ if } x\leq 0 \\ 1 & \text{ if } x> 0 \end{cases}" /></a>
+
 typically $\alpha$ = 0.01 and in this experiment $\alpha$ = 0.01
 
 #### Exponential Linear Unit
 The equation of the ELU is:
 
 <a href="http://www.codecogs.com/eqnedit.php?latex=elu(x)=\begin{cases}&space;\alpha(exp(x)-1)&space;&&space;\text{&space;if&space;}&space;x\leq&space;0&space;\\&space;x&space;&&space;\text{&space;if&space;}&space;x>&space;0&space;\end{cases}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?elu(x)=\begin{cases}&space;\alpha(exp(x)-1)&space;&&space;\text{&space;if&space;}&space;x\leq&space;0&space;\\&space;x&space;&&space;\text{&space;if&space;}&space;x>&space;0&space;\end{cases}" title="elu(x)=\begin{cases} \alpha(exp(x)-1) & \text{ if } x\leq 0 \\ x & \text{ if } x> 0 \end{cases}" /></a>
+
 which has the gradient:
 
 <a href="http://www.codecogs.com/eqnedit.php?latex=\frac{\mathrm{d}&space;}{\mathrm{d}&space;x}elu(x)=\begin{cases}&space;\alpha&space;exp(x)&space;&&space;\text{&space;if&space;}&space;x\leq&space;0&space;\\&space;1&space;&&space;\text{&space;if&space;}&space;x>&space;0&space;\end{cases}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\frac{\mathrm{d}&space;}{\mathrm{d}&space;x}elu(x)=\begin{cases}&space;\alpha&space;exp(x)&space;&&space;\text{&space;if&space;}&space;x\leq&space;0&space;\\&space;1&space;&&space;\text{&space;if&space;}&space;x>&space;0&space;\end{cases}" title="\frac{\mathrm{d} }{\mathrm{d} x}elu(x)=\begin{cases} \alpha exp(x) & \text{ if } x\leq 0 \\ 1 & \text{ if } x> 0 \end{cases}" /></a>
+
 typically $\alpha$ = 1 and in this experiment $\alpha$ = 1
+
+#### Scaled Exponential Linear Unit
+Mathematically, the SELU is defined as:
+
+<a href="http://www.codecogs.com/eqnedit.php?latex=selu(x)=\lambda&space;\begin{cases}&space;\alpha(exp(x)-1)&space;&&space;\text{&space;if&space;}&space;x\leq&space;0&space;\\&space;x&space;&&space;\text{&space;if&space;}&space;x>&space;0&space;\end{cases}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?selu(x)=\lambda&space;\begin{cases}&space;\alpha(exp(x)-1)&space;&&space;\text{&space;if&space;}&space;x\leq&space;0&space;\\&space;x&space;&&space;\text{&space;if&space;}&space;x>&space;0&space;\end{cases}" title="selu(x)=\lambda \begin{cases} \alpha(exp(x)-1) & \text{ if } x\leq 0 \\ x & \text{ if } x> 0 \end{cases}" /></a>
+
+which has the gradient:
+
+<a href="http://www.codecogs.com/eqnedit.php?latex=\frac{\mathrm{d}&space;}{\mathrm{d}&space;x}selu(x)=\lambda&space;\begin{cases}&space;\alpha&space;exp(x)&space;&&space;\text{&space;if&space;}&space;x\leq&space;0&space;\\&space;1&space;&&space;\text{&space;if&space;}&space;x>&space;0&space;\end{cases}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\frac{\mathrm{d}&space;}{\mathrm{d}&space;x}selu(x)=\lambda&space;\begin{cases}&space;\alpha&space;exp(x)&space;&&space;\text{&space;if&space;}&space;x\leq&space;0&space;\\&space;1&space;&&space;\text{&space;if&space;}&space;x>&space;0&space;\end{cases}" title="\frac{\mathrm{d} }{\mathrm{d} x}selu(x)=\lambda \begin{cases} \alpha exp(x) & \text{ if } x\leq 0 \\ 1 & \text{ if } x> 0 \end{cases}" /></a>
+
+in this experiment, <a href="http://www.codecogs.com/eqnedit.php?latex=\lambda" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\lambda" title="\lambda" /></a> = 1.6733 and <a href="http://www.codecogs.com/eqnedit.php?latex=\lambda" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\lambda" title="\lambda" /></a> = 1.0507
