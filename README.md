@@ -8,9 +8,7 @@ In recent years, deep learning in the field of computer vision has made remarkab
 In this section, I mainly introduce the four activation functions: Rectified Linear Unit (ReLU), Leaky Rectified Linear Unit (Leaky ReLU), Exponential Linear Unit (ELU) and Scaled Exponential Linear Unit (SELU). In the following subsections, I use equations to introduce each activation function mathematically.
 #### Rectified Linear Unit
 Formally, the ReLU is defined as:
-  $$relu(x) = max(0, x) ,$$
-which has the gradient:
-$$\frac{\mathrm{d} }{\mathrm{d} x}relu(x)=\begin{cases}
-0 & \text{ if } x\leq  0 \\ 
-1 & \text{ if } x> 0
-\end{cases}$$
+  $ relu(x) = max(0, x) , $
+  which has the gradient:
+<a href="http://www.codecogs.com/eqnedit.php?latex=\frac{\mathrm{d}&space;}{\mathrm{d}&space;x}relu(x)=\begin{cases}&space;0&space;&&space;\text{&space;if&space;}&space;x\leq&space;0&space;\\&space;1&space;&&space;\text{&space;if&space;}&space;x>&space;0&space;\end{cases}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\frac{\mathrm{d}&space;}{\mathrm{d}&space;x}relu(x)=\begin{cases}&space;0&space;&&space;\text{&space;if&space;}&space;x\leq&space;0&space;\\&space;1&space;&&space;\text{&space;if&space;}&space;x>&space;0&space;\end{cases}" title="\frac{\mathrm{d} }{\mathrm{d} x}relu(x)=\begin{cases} 0 & \text{ if } x\leq 0 \\ 1 & \text{ if } x> 0 \end{cases}" /></a>
+
