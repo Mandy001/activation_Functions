@@ -1,2 +1,2 @@
-# Project_01
-the initial exploration of activation functions 
+# Explore the variants of the ReLU activation function in multi-layer networks trained on MNIST dataset
+In this small project, I investigate the performance of different activation functions in multi-layer networks trained on MNIST. I compare the performances of the five activation functions (Sigmoid,ReLU, Leaky ReLU, ELU and SELU) on the same database. I find that ReLU and its further functions have better performance than Sigmoid function and the functions related to ReLU are better than ReLU. Then I choose one activation function to explore the impact of the depth of the network. After comparing the results of different numbers of hidden layers, I can see that the network with five hidden layers has the best performance. I also compare the different weight initialization strategies and in the experiment the Uniform distribution performs better than Gaussian distribution. 
