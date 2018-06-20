@@ -8,7 +8,6 @@ In recent years, deep learning in the field of computer vision has made remarkab
 In this section, I mainly introduce the four activation functions: Rectified Linear Unit (ReLU), Leaky Rectified Linear Unit (Leaky ReLU), Exponential Linear Unit (ELU) and Scaled Exponential Linear Unit (SELU). In the following subsections, I use equations to introduce each activation function mathematically.
 #### Rectified Linear Unit
 Formally, the ReLU is defined as:
-
   <a href="http://www.codecogs.com/eqnedit.php?latex=relu(x)&space;=&space;max(0,&space;x)" target="_blank"><img src="http://latex.codecogs.com/gif.latex?relu(x)&space;=&space;max(0,&space;x)" title="relu(x) = max(0, x)" /></a>
   
   which has the gradient:
