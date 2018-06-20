@@ -8,10 +8,26 @@ In recent years, deep learning in the field of computer vision has made remarkab
 In this section, I mainly introduce the four activation functions: Rectified Linear Unit (ReLU), Leaky Rectified Linear Unit (Leaky ReLU), Exponential Linear Unit (ELU) and Scaled Exponential Linear Unit (SELU). In the following subsections, I use equations to introduce each activation function mathematically.
 #### Rectified Linear Unit
 Formally, the ReLU is defined as:
+
   <a href="http://www.codecogs.com/eqnedit.php?latex=relu(x)&space;=&space;max(0,&space;x)" target="_blank"><img src="http://latex.codecogs.com/gif.latex?relu(x)&space;=&space;max(0,&space;x)" title="relu(x) = max(0, x)" /></a>
-  
   which has the gradient:
   
 <a href="http://www.codecogs.com/eqnedit.php?latex=\frac{\mathrm{d}&space;}{\mathrm{d}&space;x}relu(x)=\begin{cases}&space;0&space;&&space;\text{&space;if&space;}&space;x\leq&space;0&space;\\&space;1&space;&&space;\text{&space;if&space;}&space;x>&space;0&space;\end{cases}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\frac{\mathrm{d}&space;}{\mathrm{d}&space;x}relu(x)=\begin{cases}&space;0&space;&&space;\text{&space;if&space;}&space;x\leq&space;0&space;\\&space;1&space;&&space;\text{&space;if&space;}&space;x>&space;0&space;\end{cases}" title="\frac{\mathrm{d} }{\mathrm{d} x}relu(x)=\begin{cases} 0 & \text{ if } x\leq 0 \\ 1 & \text{ if } x> 0 \end{cases}" /></a>
 
+#### Leaky Rectified Linear Unit
+The Leaky ReLU has the following form:
 
+<a href="http://www.codecogs.com/eqnedit.php?latex=lrelu(x)=\begin{cases}&space;\alpha&space;x&space;&&space;\text{&space;if&space;}&space;x\leq&space;0&space;\\&space;x&space;&&space;\text{&space;if&space;}&space;x>&space;0&space;\end{cases}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?lrelu(x)=\begin{cases}&space;\alpha&space;x&space;&&space;\text{&space;if&space;}&space;x\leq&space;0&space;\\&space;x&space;&&space;\text{&space;if&space;}&space;x>&space;0&space;\end{cases}" title="lrelu(x)=\begin{cases} \alpha x & \text{ if } x\leq 0 \\ x & \text{ if } x> 0 \end{cases}" /></a>
+which has the gradient:
+
+<a href="http://www.codecogs.com/eqnedit.php?latex=\frac{\mathrm{d}&space;}{\mathrm{d}&space;x}lrelu(x)=\begin{cases}&space;\alpha&space;&&space;\text{&space;if&space;}&space;x\leq&space;0&space;\\&space;1&space;&&space;\text{&space;if&space;}&space;x>&space;0&space;\end{cases}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\frac{\mathrm{d}&space;}{\mathrm{d}&space;x}lrelu(x)=\begin{cases}&space;\alpha&space;&&space;\text{&space;if&space;}&space;x\leq&space;0&space;\\&space;1&space;&&space;\text{&space;if&space;}&space;x>&space;0&space;\end{cases}" title="\frac{\mathrm{d} }{\mathrm{d} x}lrelu(x)=\begin{cases} \alpha & \text{ if } x\leq 0 \\ 1 & \text{ if } x> 0 \end{cases}" /></a>
+typically $\alpha$ = 0.01 and in this experiment $\alpha$ = 0.01
+
+#### Exponential Linear Unit
+The equation of the ELU is:
+
+<a href="http://www.codecogs.com/eqnedit.php?latex=elu(x)=\begin{cases}&space;\alpha(exp(x)-1)&space;&&space;\text{&space;if&space;}&space;x\leq&space;0&space;\\&space;x&space;&&space;\text{&space;if&space;}&space;x>&space;0&space;\end{cases}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?elu(x)=\begin{cases}&space;\alpha(exp(x)-1)&space;&&space;\text{&space;if&space;}&space;x\leq&space;0&space;\\&space;x&space;&&space;\text{&space;if&space;}&space;x>&space;0&space;\end{cases}" title="elu(x)=\begin{cases} \alpha(exp(x)-1) & \text{ if } x\leq 0 \\ x & \text{ if } x> 0 \end{cases}" /></a>
+which has the gradient:
+
+<a href="http://www.codecogs.com/eqnedit.php?latex=\frac{\mathrm{d}&space;}{\mathrm{d}&space;x}elu(x)=\begin{cases}&space;\alpha&space;exp(x)&space;&&space;\text{&space;if&space;}&space;x\leq&space;0&space;\\&space;1&space;&&space;\text{&space;if&space;}&space;x>&space;0&space;\end{cases}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\frac{\mathrm{d}&space;}{\mathrm{d}&space;x}elu(x)=\begin{cases}&space;\alpha&space;exp(x)&space;&&space;\text{&space;if&space;}&space;x\leq&space;0&space;\\&space;1&space;&&space;\text{&space;if&space;}&space;x>&space;0&space;\end{cases}" title="\frac{\mathrm{d} }{\mathrm{d} x}elu(x)=\begin{cases} \alpha exp(x) & \text{ if } x\leq 0 \\ 1 & \text{ if } x> 0 \end{cases}" /></a>
+typically $\alpha$ = 1 and in this experiment $\alpha$ = 1
