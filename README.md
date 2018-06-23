@@ -1,5 +1,7 @@
 # Explore the variants of the ReLU activation function in multi-layer networks trained on MNIST dataset
 In this small project, I investigate the performance of different activation functions in multi-layer networks to address the MNIST digit classification problem. I compare the performances of the five activation functions (Sigmoid, ReLU, Leaky ReLU, ELU and SELU) on the same database. I find that ReLU and its further functions have better performance than Sigmoid function and the variants of the ReLU activation function are better than ReLU. Then I choose one activation function to explore the impact of the depth of the network. After comparing the results of different numbers of hidden layers, I can see that the network with five hidden layers has the best performance in this specific case. In addition, I compare the different weight initialization strategies and in the experiment the Uniform distribution performs better than Gaussian distribution.
 
-## About the dataset
+## About the Dataset - MNIST
 The dataset used in this project is the famous MNIST database of handwritten digits, which you can find from the website: [http://yann.lecun.com/exdb/mnist/](http://yann.lecun.com/exdb/mnist/).
+
+#### The details of this project is shown in [the PDF file](https://github.com/Mandy001/activation_Functions/blob/master/Explore%20the%20variants%20of%20the%20ReLU%20activation%20function.pdf) in the same repository.
